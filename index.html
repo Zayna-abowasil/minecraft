@@ -1,26 +1,88 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Minecraft</title>
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
-    <div class="game-container">
-        <div id="toolbar" class="toolbar">
-            <div class="tool" data-tool="axe">axe</div>
-            <div class="tool" data-tool="pickaxe">pickaxe</div>
-            <div class="tool" data-tool="shovel">shovel</div>
+    <div id="landing-page" class="landing-container">
+
+        <h1>MINECRAFT</h1>
+
+        <div class="tutorial-box">
+            <h3>How to Play</h3>
+
+            <ul>
+                <li><strong>Axe:</strong> Use it to chop Tree tiles.</li>
+                <li><strong>Pickaxe:</strong> Use it to mine Rock tiles.</li>
+                <li><strong>Shovel:</strong> Use it to dig Dirt tiles.</li>
+                <li><strong>Inventory:</strong> Click a collected block and then click the sky to place it.</li>
+            </ul>
         </div>
 
-        <div id="world" class="world"></div>
+        <button id="start-btn" class="action-btn">
+            Start Game
+        </button>
 
-        <div id="inventory" class="inventory">
-            <h3>stock</h3>
-            <div id="inventory-slot" class="inventory-slot"></div>
+    </div>
+    <div id="game-container" class="game-container">
+        <h1 class="game-title">MINECRAFT</h1>
+
+        <div class="top-bar">
+
+            <div class="toolbar">
+
+                <div class="tool" data-tool="axe">
+                    <img src="images/axe1.png" alt="Axe">
+                    <span>Axe</span>
+                </div>
+
+                <div class="tool" data-tool="pickaxe">
+                    <img src="images/pickaxe2.png" alt="Pickaxe">
+                    <span>Pickaxe</span>
+                </div>
+
+                <div class="tool" data-tool="shovel">
+                    <img src="images/shovel.webp" alt="Shovel">
+                    <span>Shovel</span>
+                </div>
+
+            </div>
+
+            <button id="reset-btn" class="action-btn reset-btn">
+                Reset World
+            </button>
+
         </div>
+
+        <div class="world-frame">
+            <div id="world" class="world"></div>
+        </div>
+        <div class="bottom-bar">
+
+            <div class="inventory">
+
+                <h3>INVENTORY</h3>
+
+                <div id="inventory-slot"
+                     class="inventory-slot">
+                </div>
+
+            </div>
+
+            <button id="back-btn"
+                    class="action-btn secondary-btn">
+                Back to Home
+            </button>
+
+        </div>
+
     </div>
     <script src="script.js"></script>
+
 </body>
 </html>

@@ -1,103 +1,247 @@
+* {
+    box-sizing: border-box;
+}
 
-body{
-    font-family: Arial, sans-serif;
-    background-color: #2b2b2b;
-    color: #ffffff;
+body {
     margin: 0;
-    padding: 20px;
+    padding: 30px;
+    min-height: 100vh;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(#477fa7, #1e2933);
+    color: white;
+    display: flex;
+    justify-content: center;
+}
+
+.landing-container {
+    width: 100%;
+    max-width: 650px;
+    min-height: 85vh;
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
 }
 
-.game-container{
-    display: flex;
+.landing-container h1,
+.game-title {
+    font-size: 48px;
+    letter-spacing: 4px;
+    margin: 0 0 20px;
+    text-shadow: 3px 3px #555, 6px 6px #111;
+}
+
+.tutorial-box {
+    width: 100%;
+    padding: 20px;
+    margin-bottom: 25px;
+    background: #24282e;
+    border: 3px solid #555b63;
+    border-radius: 10px;
+}
+
+.tutorial-box h3 {
+    margin-top: 0;
+    color: #ff9800;
+    text-align: center;
+}
+
+.tutorial-box li {
+    margin-bottom: 12px;
+}
+
+.action-btn {
+    padding: 12px 22px;
+    background: #ff9800;
+    color: white;
+    border: 2px solid #222;
+    border-radius: 6px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.action-btn:hover {
+    opacity: 0.85;
+}
+
+.reset-btn {
+    background: #c62828;
+}
+
+.secondary-btn {
+    background: #555b63;
+}
+
+.game-container {
+    display: none;
+    width: 100%;
     flex-direction: column;
     align-items: center;
     gap: 20px;
 }
 
-.toolbar{
-    display: flex;
-    gap: 15px;
-    background-color: #3c3c3c;
-    padding: 10px 20px;
-    border-radius: 8px;
-    border: 2px solid #555;
-}
-
-.tool{
-    padding: 10px 15px;
-    background-color: #555;
-    border-radius: 5px;
-    cursor: pointer;
-    user-select: none;
-    transition: 0.2s;
-}
-
-.tool:hover{
-    background-color: #666;
-}
-
-.tool.selected{
-    background-color: #ff9800;
-    border: 2px solid #fff;
-    font-weight: bold;
-}
-
-.world{
-    display: grid;
-    grid-template-columns: repeat(10,40px);
-    grid-template-rows: repeat(10,40px);
-    gap: 1px;
-    background-color: #111;
-    border: 4px solid #444;
-    padding: 5px;
-    background-color:#87ceeb;
-}
-
-.tile{
-    width: 40px;
-    height: 40px;
-    cursor: pointer;
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-}
-
-.tile-grass{
-    background-image: url('images/graas.png');
-}
-
-.tile-dirt{
-    background-image: url('images/dirt.png');
-}
-
-.tile-rock{
-    background-image: url('images/rock.png');
-}
-
-.tile-tree{
-    background-image: url('images/tree.png');
-}
-
-.inventory{
-    background-color: #3c3c3c;
-    padding: 15px;
-    border-radius: 8px;
-    border: 2px solid #555;
-    text-align: center;
-    min-width: 200px;
-}
-
-.inventory-slot{
-    width: 45px;
-    height: 45px;
-    background-color: #222;
-    border: 2px dashed #777;
-    margin: 10px auto 0;
+.top-bar,
+.bottom-bar,
+.toolbar {
     display: flex;
     align-items: center;
+}
+
+.top-bar {
+    gap: 20px;
+}
+
+.bottom-bar {
+    gap: 25px;
+}
+
+.toolbar {
+    gap: 10px;
+    padding: 10px;
+    background: #24282e;
+    border: 3px solid #555b63;
+    border-radius: 8px;
+}
+
+.tool {
+    width: 100px;
+    height: 85px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     justify-content: center;
+    gap: 5px;
+    background: #3b4048;
+    border: 2px solid #666;
+    border-radius: 5px;
     cursor: pointer;
+}
+
+.tool img {
+    width: 42px;
+    height: 42px;
+    object-fit: contain;
+}
+
+.tool:hover {
+    background: #505761;
+}
+
+.tool.selected {
+    background: #9b5c00;
+    border-color: #ff9800;
+}
+
+.world-frame {
+    padding: 8px;
+    background: #24282e;
+    border: 5px solid #555b63;
+    border-radius: 8px;
+}
+
+.world {
+    display: grid;
+    grid-template-columns: repeat(10, 52px);
+    grid-template-rows: repeat(10, 52px);
+    gap: 1px;
+    background: #111;
+}
+
+.tile {
+    width: 52px;
+    height: 52px;
+    background-size: cover;
+    background-position: center;
+    cursor: pointer;
+}
+
+.tile:hover {
+    filter: brightness(1.2);
+}
+
+.tile-sky {
+    background: #78c7ed;
+}
+
+.tile-grass {
+    background-image: url("images/graas.png");
+}
+
+.tile-dirt {
+    background-image: url("images/dirt.png");
+}
+
+.tile-rock {
+    background-image: url("images/rock.png");
+}
+
+.tile-tree {
+    background-image: url("images/tree.png");
+}
+.inventory {
+    min-width: 250px;
+    padding: 12px 20px;
+    background: #24282e;
+    border: 3px solid #555b63;
+    border-radius: 8px;
+    text-align: center;
+}
+
+.inventory h3 {
+    margin: 0 0 10px;
+    color: #ff9800;
+}
+
+.inventory-slot {
+    min-height: 60px;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.inventory-item {
+    width: 55px;
+    height: 55px;
+    position: relative;
+    border: 3px solid #777;
+    background-size: cover;
+    background-position: center;
+    cursor: pointer;
+}
+
+.inventory-item span {
+    position: absolute;
+    right: 2px;
+    bottom: 2px;
+    padding: 2px 5px;
+    background: #111;
+    color: white;
+    font-size: 12px;
+}
+
+.inventory-item.selected-item {
+    border-color: #ff9800;
+}
+@media (max-width: 650px) {
+
+    body {
+        padding: 10px;
+    }
+
+    .world {
+        grid-template-columns: repeat(10, 35px);
+        grid-template-rows: repeat(10, 35px);
+    }
+
+    .tile {
+        width: 35px;
+        height: 35px;
+    }
+
+    .top-bar,
+    .bottom-bar {
+        flex-direction: column;
+    }
+
 }
